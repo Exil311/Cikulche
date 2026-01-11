@@ -1,0 +1,29 @@
+### 1. Регистрация на нов потребител (Maria)
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Misho Mishov",
+  "email": "misho@example.com",
+  "password": "mishoGotin",
+  "birthYear": 2003
+}
+
+### 2. Опит за Вход (Login) със същите данни
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "maria@example.com",
+  "password": "parola123"
+}
+
+### 3. Опит за Вход с грешна парола (Трябва да даде грешка 403)
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "maria@example.com",
+  "password": "GRESHNA_PAROLA"
+}
+
